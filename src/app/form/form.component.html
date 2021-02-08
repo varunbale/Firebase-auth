@@ -1,0 +1,227 @@
+<div class="container">
+
+    <h5>This form is designed to gather information in preparation for the COVID-19 vaccination process.</h5>
+   <br>
+   <form [formGroup]="profileForm" (ngSubmit)="onFormSubmit()">
+  
+    <div class="card">
+      <div class="card-header text-white">
+        About You
+      </div>
+      <div class="card-body">
+          <div class="row row-content">
+            <div class="col-4 form-group">
+              <label  class="form-label">First Name</label><span class="required-asterisk">*</span>
+              <input  class="form-control" id="fname" formControlName="fname">
+              <small  class="form-text text-danger" *ngIf="profileForm.get('fname')?.errors?.required && profileForm.get('fname')?.touched">This field is mandatory.</small>
+            </div>
+            <div class="col-4 form-group">
+              <label  class="form-label">Middle Name</label>
+              <input  class="form-control" id="mname" formControlName="mname">
+            </div>
+            <div class="col-4 form-group">
+              <label  class="form-label">Last Name</label> <span class="required-asterisk">*</span>
+              <input  class="form-control" id="lname" formControlName="lname">
+              <small  class="form-text text-danger" *ngIf="profileForm.get('lname')?.errors?.required && profileForm.get('lname')?.touched">This field is mandatory.</small>
+            </div>
+            <div class="col-4 form-group">
+              <label  class="form-label">Date of Birth</label> <span class="required-asterisk">*</span>
+              <input   type="date" class="form-control" id="dob" formControlName="dob">
+              <small  class="form-text text-danger" *ngIf="profileForm.get('dob')?.errors?.required && profileForm.get('dob')?.touched">This field is mandatory.</small>
+            </div>
+        </div>
+      </div>
+    </div><br>
+  
+    <div class="card">
+      <div class="card-header text-white">
+        Contact Information
+      </div>
+      <div class="card-body">
+        
+          <div class="row row-content">
+              <div class="col-4 form-group">
+                <label  class="form-label">Address Line 1</label><span class="required-asterisk">*</span>
+                <input  class="form-control" id="ad1" formControlName="ad1">
+                <small  class="form-text text-danger" *ngIf="profileForm.get('ad1')?.errors?.required && profileForm.get('ad1')?.touched">This field is mandatory.</small>
+              </div>
+              <div class="col-4 form-group">
+                <label  class="form-label">Address Line 2</label>
+                <input  class="form-control" id="ad2" formControlName="ad2">
+              </div>
+              <div class="col-4 form-group">
+                <label  class="form-label">City</label><span class="required-asterisk">*</span>
+                <input  class="form-control" id="city" formControlName="city">
+                <small  class="form-text text-danger" *ngIf="profileForm.get('city')?.errors?.required && profileForm.get('city')?.touched">This field is mandatory.</small>
+              </div>
+              <div class="col-4 form-group">
+                <label  class="form-label">County</label><span class="required-asterisk">*</span>
+                <select class="form-select">
+                  <option value="clay">Clay</option>
+                  <option value="colombia">Colombia</option>
+                  <option value="dexie">Dexie</option>
+                </select>
+                <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+              </div>
+              <div class="col-4 form-group">
+                <label  class="form-label">State</label><span class="required-asterisk">*</span>
+                <select class="form-select">
+                  <option value="clay">Clay</option>
+                  <option value="colombia">Colombia</option>
+                  <option value="dexie">Dexie</option>
+                </select>
+                <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+              </div>
+              <div class="col-4 form-group">
+                <label  class="form-label">Zip Code</label><span class="required-asterisk">*</span>
+                <input  class="form-control" id="zip" formControlName="zip">
+                <small  class="form-text text-danger" *ngIf="profileForm.get('zip')?.errors?.required && profileForm.get('zip')?.touched">This field is mandatory.</small>
+              </div>
+              <div class="row row-content">
+              <div class="col-4 form-group">
+                <label  class="form-label">Country</label><span class="required-asterisk">*</span>
+                <select class="form-select" formControlName="country">
+                  <option value="clay">India</option>
+                  <option value="colombia">Colombia</option>
+                  <option value="dexie">Dexie</option>
+                </select>
+                <small  class="form-text text-danger" *ngIf="profileForm.get('country')?.errors?.required && profileForm.get('country')?.touched">This field is mandatory.</small>
+  
+              </div>
+            </div>
+            <div class="row row-content">
+            <div class="col-4 form-group">
+              <label  class="form-label">Preferred Language</label><span class="required-asterisk">*</span>
+              <select class="form-select" formControlName="lang">
+                <option value="clay">English</option>
+                <option value="colombia">Colombia</option>
+                <option value="dexie">Dexie</option>
+              </select>
+              <small  class="form-text text-danger" *ngIf="profileForm.get('lang')?.errors?.required && profileForm.get('lang')?.touched">This field is mandatory.</small>
+  
+            </div>
+            <div class="col-4 form-group">
+              <label  class="form-label">Preferred Method of Contact</label><span class="required-asterisk">*</span>
+              <select class="form-select">
+                <option value="email">Email</option>
+                <option value="phone">Phone</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-4 form-group">
+            <label  class="form-label">Email Address</label>
+            <input  class="form-control" id="email" formControlName="email">
+            <small  class="form-text text-danger" *ngIf="profileForm.get('email')?.errors?.required && profileForm.get('email')?.touched">This field is mandatory.</small>
+          </div>
+          <div class="col-4 form-group">
+            <label  class="form-label">Confirm Email Address</label>
+            <input  class="form-control" id="email" formControlName="email">
+            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+          </div>
+          <div class="col-4 form-group">
+            <label  class="form-label">Phone</label>
+            <input  class="form-control" id="phone" formControlName="phone">
+            <small  class="form-text text-danger" *ngIf="profileForm.get('phone')?.errors?.required && profileForm.get('phone')?.touched">
+              Enter a valid mobile number.</small>
+          </div>
+  
+        </div>
+        
+        
+       
+      </div>
+    </div><br>
+  
+  
+    <div class="card">
+      <div class="card-header text-white">
+        Identification Information
+      </div>
+      <div class="card-body">
+        <h5>Providing this information not required but helps improve our ability to communicate with you.</h5>
+        <div class="col-12 form-group">
+          <label  class="form-label">Please Enter State ID/ Drivers License number</label>
+          <input  class="form-control" id="license">
+        </div>
+        <br>
+        
+          
+            <label><h6>Is your State ID/ Drivers License from Florida?</h6></label>
+            <label class="radio-inline">
+              <input type="radio" name="optradio">Yes
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="optradio">No
+            </label>
+          <br>
+  
+          
+            <label><h6>Is this Florida ID/ Drivers License address current?</h6></label>
+            <label class="radio-inline">
+              <input type="radio" name="optradio">Yes
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="optradio">No
+            </label>
+          <br>
+  
+      </div>
+    </div><br>
+  
+    <div class="card">
+      <div class="card-header text-white">
+        Attestaion
+      </div>
+      <div class="card-body">
+         <strong><h5>Consent to Disclose:</h5></strong><br>
+         <p>I verify that the information provided above is accurate and that the information 
+           through this website and/or application and the disclosure of such information for the purpose
+            stated above are subject to the requirements of the Florida State Internet Security and Privacy 
+            Act</p>
+  
+          <p>In reviewing and selecting the attestation checkbox, I give my consent for the services
+             that I am requesting from the Florida State Department of Health and its entities/contractors.</p>
+  
+             <p>Florida Department of Health may disclose personal information without applicant consent if 
+               the collection or disclosure is: (1) necessary to perform the statutory duties of Florida Department 
+               of Health, or necessary for Florida Department of Health to operate a program authorized by law, 
+               or authorized by state or federal statute or regulation; (2) made pursuant to a court order or by law;
+                (3) for the purpose of validating the identity of the applicant; or (4) of information to be used 
+                solely for statistical purposes that is in a form that cannot be used to identify any particular
+                 person.</p>
+  
+                 <p>Any information collected through this form is also subject to the Florida State Freedom
+                    of Information Law and the Personal Privacy Protection Law.</p>
+  
+                    <p>Florida Department of Health will enforce its rights against any unauthorized access 
+                      or attempted unauthorized access to Florida Department of Health information technology assets
+                       or against any other inappropriate use of this website.</p>
+                       
+                       <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          I Consent
+                        </label>
+                      </div>
+  
+                     
+  
+                     
+      </div>
+    </div>
+    <br>
+  
+  
+      <div class="row row-content">  
+        <div class="col-2" id="back">
+        <button type="button" class="btn btn-primary" routerLink="/home">Back</button>
+      </div>
+      <div class="col-2" id="submit"> 
+        <button type="submit" class="btn btn-primary">submit</button>
+      </div> 
+     </div>
+     <br>
+    </form>
+  
+  </div>
+  

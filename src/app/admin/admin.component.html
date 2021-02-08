@@ -1,0 +1,64 @@
+<!-- <div class="container">
+    <form>
+     <div class="row row-content" *ngIf="!isSignedIn">
+    <h2>
+        Sign In
+    </h2>
+    <div class="form-control">
+    <input type="text" #email placeholder="Enter Email"/>
+    <input type="password" #password placeholder="Enter password"/>
+    <button (click)="onSignIn(email.value,password.value)">Sign In</button>
+    </div>
+    </div>
+    <div class="row row-content" *ngIf="!isSignedIn">
+        <h2>
+            Sign Up
+        </h2>
+        <div class="form-control">
+        <input type="text" #emailUp placeholder="Enter Email"/>
+        <input type="password" #passwordUp placeholder="Enter password"/>
+        <button (click)="onSignUp(emailUp.value,passwordUp.value)">Sign Up</button>
+        </div>
+     </div>
+    </form>
+</div>  -->
+
+
+
+<div class="container">
+    <div class="card col-6">
+        <div class="card-header">
+          Sign In
+        </div>
+        <div class="card-body" *ngIf="!isSignedIn">
+            <div class="mb-3">
+                <label class="form-label">Email address</label>
+                <input type="text" class="form-control" #email>
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" #password>
+              </div>
+              <button class="btn btn-primary"(click)="onSignIn(email.value,password.value)">Sign In</button>
+
+        </div>
+      </div><br>
+      <div class="card col-6">
+        <div class="card-header">
+          Sign Up
+        </div>
+        <div class="card-body" *ngIf="!isSignedIn">
+            <div class="mb-3">
+                <label class="form-label">Email address</label>
+                <input type="text" class="form-control" #emailUp>
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" #passwordUp>
+              </div>
+              <button class="btn btn-primary"(click)="onSignUp(emailUp.value,passwordUp.value)">Sign Up</button>
+        </div>
+      </div>
+</div>
